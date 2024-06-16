@@ -9,6 +9,8 @@ type SearchResult = {
   height: any,
 }
 
+export const dynamic = 'force-dynamic';
+
 export default async function GalleryPage() {
   const results = await cloudinary.v2.search
     .expression("resource_type:image")
