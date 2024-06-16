@@ -3,8 +3,6 @@
 import { CldImage } from 'next-cloudinary';
 import { OvalLoveTwo } from '@icon-park/react'
 
-export const dynamic = 'force-dynamic';
-
 export default function CImage(props: any) {
   return (
     <div className='relative'>
