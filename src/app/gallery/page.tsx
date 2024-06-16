@@ -1,21 +1,35 @@
-"use client";
-import { CldUploadButton } from 'next-cloudinary';
-import { Button } from "@/components/ui/button"
-import { Upload } from '@icon-park/react';
+import UploadButton from "../upload-button/page"
+import cloudinary from 'cloudinary';
 
-export default function GalleryPage() {
+import CImage from "./image";
+
+type SearchResult = {
+  public_id: any,
+  width: any,
+  height: any,
+}
+
+export default async function GalleryPage() {
+  const results = await cloudinary.v2.search
+    .expression("resource_type:image")
+    .sort_by("created_at", "desc")
+    .max_results()
+    .execute() as {resources: SearchResult[]};
+
+  // console.log(results)
+
   return (
     <section>
       <div className="flex justify-between">
         <h1 className="text-4xl font-bold">图库</h1>
-        <Button asChild>
-          <CldUploadButton uploadPreset="PhotoHub">
-            <Upload theme="outline" size="18" fill="#000000" strokeWidth={2} strokeLinecap="butt"/>
-            <span className='pl-2'>上传图片</span>
-          </CldUploadButton>
-        </Button>
-
-        
+        <UploadButton/>
+      </div>
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10">
+        {
+          results.resources.map( ({public_id, width, height} ) =>
+            <CImage src={public_id} key={public_id} width={width} height={height}/>
+          )
+        }
       </div>
 
     </section>)

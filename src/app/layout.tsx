@@ -54,9 +54,12 @@ export default function RootLayout({
             className="flex items-center gap-2 text-lg font-semibold md:text-base"
           >
             <Package2 className="h-6 w-6" />
-            <span className="sr-only">Acme Inc</span>
+            {/* <span className="sr-only">打我的鸡</span> */}
+            <span>
+              秀图
+            </span>
           </Link>
-          <Link
+          {/* <Link
             href="#"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
@@ -85,7 +88,7 @@ export default function RootLayout({
             className="text-foreground transition-colors hover:text-foreground"
           >
             Settings
-          </Link>
+          </Link> */}
 
           <div className='flex flex-1 items-center justify-between space-x-2 md:justify-end'>
             <DropdownMenu>

@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 import Image from 'next/image'
-import { CldImage } from 'next-cloudinary';
+
 
 export default function Home() {
   const [imageID, setImageID] = useState('pzmuqriidvtvgmjudp6w');
