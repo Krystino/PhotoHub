@@ -48,7 +48,7 @@ export default function RootLayout({
     <html lang="en" className='dark'>
       <body className={inter.className}>
         <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
-        <nav className="container flex flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
+        <nav className="container flex flex-row gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
           <Link
             href="#"
             className="flex items-center gap-2 text-lg font-semibold md:text-base"
@@ -90,7 +90,7 @@ export default function RootLayout({
             Settings
           </Link> */}
 
-          <div className='flex flex-1 items-center justify-between space-x-2 md:justify-end'>
+          <div className='flex flex-1 items-center justify-end space-x-2 md:justify-end sm:justify-end'>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
